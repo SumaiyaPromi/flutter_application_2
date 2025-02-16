@@ -1,74 +1,108 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Shoe Shopping 👠"),
-        ),
-        body: Container(
-          padding: EdgeInsets.all(20),
-          margin: const EdgeInsets.fromLTRB(30, 30, 30, 400),
-          color: const Color.fromARGB(255, 246, 246, 246),
-          child: Column(
-            children: [
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text('50% OFF'),
-                    Icon(Icons.favorite_border),
-                  ],
-                ),
-              ),
-              Expanded(
-                // Important: Use Expanded to fill the space
-                child: Container(
-                  height: 300,
-                  width: 300,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                          "assets/images/img.png"), // Use AssetImage here
-                      fit: BoxFit
-                          .contain, // Or BoxFit.cover, BoxFit.fill, etc. as needed
-                    ),
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text("Nike Shoes",style: TextStyle(
-                    fontSize: 24,
-                  ),),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [Text("45,000",style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20
-                ),),SizedBox(width: 50,), Text("55,000",style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 20,
-                ),)],
-              )
-            ],
-          ),
-        ),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
+      home: const MyHomePage(),
     );
   }
 }
 
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        toolbarHeight: 100,
+        title: Text('Welcome to Flutter'),
+      ),
+      body: Row(
+        children: [
+          Text(
+            "4.0",
+            style: TextStyle(fontSize: 50),
+          ),
+          Icon(
+            Iconsax.star,
+            color: Colors.black,
+            size: 50,
+            shadows: [
+              BoxShadow(
+                color: Colors.black,
+                spreadRadius: 2,
+                blurRadius: 4,
+              ),
+            ],
+          ),
+          Icon(
+            Iconsax.star,
+            color: Colors.black,
+            size: 50,
+            shadows: [
+              BoxShadow(
+                color: Colors.black,
+                spreadRadius: 2,
+                blurRadius: 4,
+              ),
+            ],
+          ),
+          Icon(
+            Iconsax.star,
+            color: Colors.black,
+            size: 50,
+            shadows: [
+              BoxShadow(
+                color: Colors.black,
+                spreadRadius: 2,
+                blurRadius: 4,
+              ),
+            ],
+          ),
+          Icon(
+            Iconsax.star,
+            color: Colors.black,
+            size: 50,
+            shadows: [
+              BoxShadow(
+                color: Colors.black,
+                spreadRadius: 2,
+                blurRadius: 4,
+              ),
+            ],
+          ),
+          Icon(
+            Iconsax.star,
+            color: Colors.grey,
+            size: 50,
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 10),
+            color: Colors.grey,
+            child: Text("Submit"),
+          ),
+        ],
+      ),
+    );
+  }
+}
